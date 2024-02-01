@@ -105,21 +105,21 @@ class Game
   def victory
     # une méthode qui vérifie le plateau et indique s'il y a un vainqueur 
     if @board.get_cases_array[0].content == @board.get_cases_array[1].content && @board.get_cases_array[1].content == @board.get_cases_array[2].content && @board.get_cases_array[2].content !=" "
-      return true
+      return true #verif ligne A
     elsif @board.get_cases_array[3].content == @board.get_cases_array[4].content && @board.get_cases_array[4].content == @board.get_cases_array[5].content && @board.get_cases_array[5].content !=" "
-      return true
+      return true #verif ligne B
     elsif @board.get_cases_array[6].content == @board.get_cases_array[7].content && @board.get_cases_array[7].content == @board.get_cases_array[8].content && @board.get_cases_array[8].content !=" "
-      return true
+      return true #verif ligne C
     elsif @board.get_cases_array[0].content == @board.get_cases_array[3].content && @board.get_cases_array[3].content == @board.get_cases_array[6].content && @board.get_cases_array[6].content !=" "
-      return true
+      return true #verif col 1
     elsif @board.get_cases_array[1].content == @board.get_cases_array[4].content && @board.get_cases_array[4].content == @board.get_cases_array[7].content && @board.get_cases_array[7].content !=" "
-      return true
+      return true #verif col 2
     elsif @board.get_cases_array[2].content == @board.get_cases_array[5].content && @board.get_cases_array[5].content == @board.get_cases_array[8].content && @board.get_cases_array[8].content !=" "
-      return true
+      return true #verif col 3
     elsif @board.get_cases_array[0].content == @board.get_cases_array[4].content && @board.get_cases_array[4].content == @board.get_cases_array[8].content && @board.get_cases_array[8].content !=" "
-      return true
+      return true #verif diag gauche droite
     elsif @board.get_cases_array[2].content == @board.get_cases_array[4].content && @board.get_cases_array[4].content == @board.get_cases_array[6].content && @board.get_cases_array[6].content !=" "
-      return true
+      return true #verif diag droite gauche
     else
       return false
     end
