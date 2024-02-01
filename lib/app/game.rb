@@ -9,7 +9,7 @@ class Game
   attr_accessor :player1, :player2, :board
 
   def initialize
-    # On démarre le jeu : création des joueurs et du morpion
+    # création des joueurs
     puts "Quel est ton nom (X)"
     print "> "
     name_player1 = gets.chomp
@@ -21,8 +21,8 @@ class Game
     name_player2 = gets.chomp
     @player2 = Player.new("#{name = name_player2}", "#{symbol = "O"}")
     # @@player << @player2
-    puts "Bienvenue dans ce morpion #{name_player1} et #{name_player2}"
-    @board = Board.new
+    puts "Bienvenue #{name_player1} et #{name_player2}"
+    @board = Board.new #création plateau
  
   end #initialize
   
@@ -43,7 +43,7 @@ class Game
           sleep (2)
           puts "#{@board.start}"
           puts "#{@board.show_game}"
-          puts "C'est ton tour #{player1.player_name}."
+          puts "C'est ton tour #{player1.player_name}. Tu choisis (lettre de A à C en majuscule et chiffre de 1 à 3, ex : A1)"
           print ">"
           next_move = gets.chomp
           if @board.get_cases_array.any? {|x| x.position == next_move} # La position est exacte ...
@@ -70,7 +70,7 @@ class Game
           sleep (2)
           puts "#{@board.start}"
           puts "#{@board.show_game}"
-          puts "C'est ton tour #{player2.player_name}."
+          puts "C'est ton tour #{player2.player_name}. Tu choisis (lettre de A à C en majuscule et chiffre de 1 à 3, ex : A1)"
           print ">"
           next_move = gets.chomp
           if  @board.get_cases_array.any? {|x| x.position == next_move}  # La position est exacte ...
